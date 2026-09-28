@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body, #root {
+    height: 100%;
+  }
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    color: #1F1410;
+    background:
+      radial-gradient(1200px 600px at 80% -10%, rgba(200,165,91,0.10), transparent 60%),
+      radial-gradient(900px 500px at -10% 100%, rgba(123,31,44,0.06), transparent 60%),
+      #FBF7F1;
+    background-attachment: fixed;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  ::selection {
+    background: rgba(200, 165, 91, 0.35);
+    color: #1F1410;
+  }
+}
+
+@layer components {
+  .eyebrow {
+    @apply text-[11px] uppercase tracking-wider2 text-maroon-600 font-semibold;
+  }
+  .card {
+    @apply bg-white/80 backdrop-blur-sm border border-cream-200 rounded-xl2 shadow-card;
+  }
+  .card-elev {
+    @apply bg-white border border-cream-200 rounded-xl2 shadow-card hover:shadow-card-hover transition-shadow;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2
+           px-6 py-3 rounded-full
+           bg-maroon-600 text-cream-50 font-medium tracking-wide
+           hover:bg-maroon-500 active:bg-maroon-700
+           shadow-[0_8px_24px_rgba(123,31,44,0.25)]
+           transition-all;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2
+           px-5 py-2.5 rounded-full
+           text-maroon-600 hover:bg-maroon-50
+           transition-colors font-medium;
+  }
+  .divider-gold {
+    @apply h-px w-12 bg-gradient-to-r from-gold-500 to-gold-300;
+  }
+  .quote-evidence {
+    @apply font-serif italic text-ink-700 leading-relaxed
+           border-l-2 border-gold-500 pl-5 py-1;
+  }
+}
+
+/* Subtle paper grain */
+.paper {
+  background-image:
+    radial-gradient(rgba(123,31,44,0.04) 1px, transparent 1px);
+  background-size: 16px 16px;
+}
